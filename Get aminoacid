@@ -1,0 +1,61 @@
+def obtener_aminoacido (codon):
+    """
+    Test obtener_aminoacido function 
+
+    Obtiene el aminoacido correspondiente a un codon
+    Entrada: Una tripleta de nucleotidos
+    Salida: El aminoacido correspondiente a la tripleta de nucleotidos
+
+    >>> obtener_aminoacido ("AUG")
+    Met
+
+    >>> obtener_aminoacido ("GAU")
+    Asp
+    """
+    cd = codon.split()
+    aa = []
+    for elem in cd:
+        if elem == "AUG":
+            aa.append ("Met")
+        elif elem == "UGG":
+            aa.append ("Trp")
+        elif elem == "GAC" or elem == "GAU":
+            aa.append ("Asp")
+        elif elem == "AAC" or elem == "AAU":
+            aa.append ("Asn")
+        elif elem == "UGC" or elem== "UGU":
+            aa.append ("Cys")
+        elif elem == "UUC" or elem== "UUU":
+            aa.append ("Phe")
+        elif elem == "GAA" or elem=="GAG":
+            aa.append ("Glu")
+        elif elem == "CAA" or elem=="CAG":
+            aa.append ("Gln")
+        elif elem == "CAC" or elem=="CAU":
+            aa.append ("His")
+        elif elem == "AAA" or elem == "AAG":
+            aa.append ("Lys")
+        elif elem=="UAC" or elem=="UAU":
+            aa.append("Tyr")
+        elif elem=="AUA" or elem=="AUC" or elem=="AUU":
+            aa.append("Ile")
+        elif elem=="GCA" or elem=="GCC" or elem=="GCG" or elem=="GCU":
+            aa.append("Ala")
+        elif elem=="GGA" or elem=="GGC" or elem=="GGG" or elem=="GGU":
+            aa.append("Gly")
+        elif elem=="CCA" or elem=="CCC" or elem=="CCG" or elem=="CCU":
+            aa.append("Pro")
+        elif elem=="ACA" or elem=="ACC" or elem=="ACG" or elem=="ACU":
+            aa.append("Thr")
+        elif elem=="GUA" or elem=="GUC" or elem=="GUG" or elem=="GUU":
+            aa.append("Val")
+        elif elem=="CGA" or elem=="CGC" or elem=="CGG" or elem=="CGU" or elem=="AGA" or elem=="AGG":
+            aa.append("Arg")
+        elif elem=="CUA" or elem=="CUC" or elem=="CUG" or elem=="CUU" or elem=="UUA" or elem=="UUG":
+            aa.append("Leu")
+        elif elem=="UCA" or elem=="UCC" or elem=="UCG" or elem=="UCU" or elem=="AGC" or elem=="AGU":
+            aa.append("Ser")
+        elif elem=="UGA" or elem=="UAA" or elem=="UAG":
+            aa.append("Stop")
+    proteina = "" .join(aa)
+    print (proteina)

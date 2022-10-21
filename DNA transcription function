@@ -1,0 +1,19 @@
+def transcribir_ADN (seq):
+    """
+    Test transcribir ADN function
+
+    Obtiene el transcrito de ARN producto de la sustitucion de las bases de Timina por Uracilo
+    Entrada: La secuencia de ADN
+    Salida: La secuencia de ARN
+
+    >>> transcribir_ADN ("ATGGCCTTAGCATTT")
+    'AUGGCCUUAGCAUUU'
+    """
+    DNA = seq.upper()
+    RNA = ""
+    for i in range (len(DNA)):
+        if DNA[i] == "T":
+            RNA += "U"
+        else:
+            RNA += DNA [i]
+    return RNA
